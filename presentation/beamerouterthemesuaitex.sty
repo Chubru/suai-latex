@@ -1,0 +1,71 @@
+\mode<presentation>
+
+% Frame title
+\defbeamertemplate*{frametitle}{suaitex}[1][]
+{
+\begin{beamercolorbox}[wd=\textwidth,ht=40pt]{}
+    
+    \begin{columns}[c]
+        \column{0.75\textwidth}
+        \textbf{\insertframetitle}
+        
+        \column{0.20\textwidth}
+        \includegraphics[height=30pt]{frame-logo}
+    \end{columns}
+
+\begin{tikzpicture}
+    \shade[shading=my shading] (0,0) rectangle (\textwidth,1pt);
+\end{tikzpicture}
+\end{beamercolorbox}
+
+
+}
+
+% \defbeamertemplate*{footline}{suaitex} {%
+%     \begin{beamercolorbox}{section in head/foot}
+%         \vskip2pt \insertnavigation{0.8\paperwidth}\vskip2pt
+%     \end{beamercolorbox}%
+% }
+
+
+
+
+\defbeamertemplate{background}{suaitex}[1][]{
+    \includegraphics[width=\paperwidth,height=\paperheight]{title-bg}
+}
+
+\defbeamertemplate*{headline}{suaitex}{
+    \begin{beamercolorbox}[wd=\textwidth,ht=10pt]{}
+        % \insertsectionhead
+    \end{beamercolorbox}
+}
+
+\defbeamertemplate*{footline}{suaitex}{
+    \begin{beamercolorbox}[wd=\textwidth,ht=16pt]{}
+        \rightskip20pt
+        \leftskip 0pt plus 1fill
+        \footnotesize{\insertframenumber\hskip2pt/\hskip2pt\inserttotalframenumber}
+        \vskip8pt
+    \end{beamercolorbox}
+    
+}
+
+
+\setbeamertemplate{section in toc}{%
+  \leavevmode%
+  % prevents the period to be printed with the first/last section option
+  \ifnum\beamer@tempcount>\beamer@toclastsection
+  \else
+  \ifnum\beamer@tempcount>0
+    \large\textbf\inserttocsectionnumber.
+  \fi\fi%
+  \textbf\inserttocsection\par%
+}
+
+% head- and footline
+% sidebars
+% logo
+% frame title
+
+% where any nav elements should go and what they should look like
+\mode<all>

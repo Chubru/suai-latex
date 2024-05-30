@@ -1,0 +1,38 @@
+\mode <presentation>
+
+\newcommand{\supervisor}[1]{\def\insertsupervisor{#1}}
+% Title page
+\mode <presentation>
+
+% Title page
+\defbeamertemplate*{title page}{suaitex}[1][]{
+% \usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{title-bg.png}}
+    \begin{tikzpicture}[overlay, remember picture]
+        \node[inner sep=0pt,outer sep=0pt,anchor=north east] at (current page.north east)
+            {\includegraphics[width=\the\paperwidth,height=\the\paperheight]{title-bg}};
+    \end{tikzpicture}
+    \begin{tikzpicture}[overlay, remember picture]
+        \node[anchor=north west, xshift=16pt, yshift=-15pt] at (current page.north west)
+            {\includegraphics[width=.25\paperwidth]{title-logo}};
+    \end{tikzpicture}
+    \vskip2cm%
+%% "title page header"  defines the loaded colors.
+    \begin{beamercolorbox}[left,#1]{title page header}
+        \usebeamerfont{title}\textbf{\huge\inserttitle}\par%
+    \end{beamercolorbox}%
+    \vskip0.75cm%
+    \begin{beamercolorbox}[wd=12cm,leftskip=0cm,#1]{author}
+        \usebeamerfont{author}\textcolor{black}{\insertauthor}%
+    \end{beamercolorbox}
+    \vskip0.2cm%
+    \begin{beamercolorbox}[wd=12cm,leftskip=0cm,#1]{supervisor}
+        \usebeamerfont{author}\textcolor{black}{\insertsupervisor}%
+    \end{beamercolorbox}
+    \vskip0.2cm%
+    \begin{beamercolorbox}[wd=12cm,leftskip=0cm,#1]{date}
+        \usebeamerfont{author}\textcolor{black}{\insertdate}%
+    \end{beamercolorbox}
+    \vfill
+}
+
+\mode<all>

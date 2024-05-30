@@ -1,0 +1,38 @@
+\mode<presentation>
+\setbeamersize{text margin left=20pt, text margin right=20pt} 
+% Requirement
+\RequirePackage{tikz}
+\usetikzlibrary{positioning,calc}
+\RequirePackage{graphicx}
+% \RequirePackage{enumitem}
+
+
+% Settings
+\useinnertheme{suaitex}
+\useoutertheme{suaitex}
+\usecolortheme{suaitex}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{blocks}[rounded][shadow=true]
+
+\setbeamertemplate{logo}{}
+
+
+% \defbeamertemplate{itemize item}{mysquare}{\hrule width 2pt height 2pt}
+\setbeamertemplate{itemize item}[square] % should be smaller, but
+
+% \setlength{\leftmargini}{20pt}
+\settowidth{\leftmargini}{\usebeamertemplate{itemize item}}
+\addtolength{\leftmargini}{\labelsep}
+
+
+\usefonttheme{professionalfonts} % using non standard fonts for beamer
+\usefonttheme{serif} % default family is serif
+\usepackage{fontspec}
+% \setmainfont{CMU Serif}
+\setmainfont{Times New Roman}
+
+% \logo{\includegraphics[height=30pt]{frame-logo.pdf}}
+
+
+\mode<all>

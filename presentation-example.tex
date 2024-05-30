@@ -1,0 +1,111 @@
+\documentclass[aspectratio=169]{beamer}
+\usetheme{suaitex}
+% собирать через xelatex (2 раза)!!!
+
+
+% \usepackage{pgfpages} 
+% \pgfpagesuselayout{resize to}[a4paper,border shrink=5mm,landscape]
+
+\title{Тема презентации}
+\date[ГУАП \the\year{}]{Подзаголовок (дата) -- \the\year{}}
+\author[Автор]{Автор}
+\supervisor{Руководитель}
+
+\begin{document}
+
+\begin{frame}[plain]
+    \titlepage
+\end{frame}
+
+
+\section*{Outline}
+
+\begin{frame} 
+    \frametitle{Outline} 
+    \tableofcontents 
+\end{frame}
+
+
+\section{Motivation}
+
+\begin{frame}[t]
+    \frametitle{What Are Prime Numbers?} 
+    \begin{definition} 
+        A \alert{prime number} is a number that has exactly two divisors. 
+    \end{definition} 
+
+    \begin{example} 
+        \begin{itemize} 
+        \item2 is prime(two divisors: 1 and 2). 
+        \item3 is prime(two divisors: 1 and 3). 
+        \item4 is not prime(\alert{three} divisors: 1, 2, and 4). 
+        \end{itemize} 
+    \end{example} 
+\end{frame}
+
+\begin{frame}
+    \frametitle{What’s Still To Do?} 
+    \begin{columns}[t]
+        \column{0.45\textwidth}
+        \begin{block}{Answered Questions} 
+            How many primes are there? 
+        \end{block} 
+        \column{0.45\textwidth}
+        \begin{block}{Open Questions} 
+            Is every even number the sum of two primes? 
+        \end{block} 
+    \end{columns}
+\end{frame}
+
+\begin{frame}[fragile=singleslide]
+    \frametitle{An Algorithm for Finding Prime Numbers}
+
+    \begin{verbatim}
+int main (void) {
+    std::vector<bool> is_prime (100, true);
+    for (int i = 2; i < 100; i++)
+        if(is_prime[i]){
+            std::cout << i << " ";
+            for (int j = i; j < 100; is_prime[j] = false, j+=i);
+        }
+    return 0;
+}
+    \end{verbatim}
+
+    \begin{uncoverenv}<2>
+        Note the use of \verb|std::|.        
+    \end{uncoverenv}
+    
+\end{frame}
+
+
+\section{Theorem}
+
+\begin{frame} 
+    \frametitle{There Is No Largest Prime Number} 
+    \begin{theorem}
+    There is no largest prime number. \end{theorem} 
+    \begin{itemize} 
+        \item Suppose $p$ were the largest prime number. 
+        \item Let $q$ be the product of the first $p$ numbers. 
+        \item Then $q+1$ is not divisible by any of them. 
+        \item But $q + 1$ is greater than $1$, thus divisible by some prime
+        number not in the first $p$ numbers.
+    \end{itemize}
+\end{frame}
+
+\begin{frame} 
+    \frametitle{There Is No Largest Prime Number} 
+    \framesubtitle{The proof uses \textit{reductio ad absurdum}.} 
+    \begin{theorem}
+    There is no largest prime number. \end{theorem} 
+    \begin{enumerate} 
+    \item<1-| alert@1> Suppose $p$ were the largest prime number. 
+    \item<2-> Let $q$ be the product of the first $p$ numbers. 
+    \item<2-> Then $q+1$ is not divisible by any of them. 
+    \item<1-> But $q + 1$ is greater than $1$, thus divisible by some prime
+    number not in the first $p$ numbers.
+    \end{enumerate}
+\end{frame}
+    
+\end{document}

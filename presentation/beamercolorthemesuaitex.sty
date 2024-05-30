@@ -1,0 +1,43 @@
+\definecolor{suaiBlue}{HTML}{005AAA}
+\definecolor{suaiRed}{HTML}{E4003A}
+\definecolor{suaiDarkblue}{HTML}{002856}
+\definecolor{suaiMedblue}{HTML}{003F89}
+\definecolor{suaiLightblue}{HTML}{00B8EE}
+\definecolor{suaiPurple}{HTML}{AB3A8D}
+\definecolor{suaiPink}{HTML}{E72B70}
+
+
+\setbeamercolor{paletteprimary}{fg=suaiBlue}
+\setbeamercolor{palettesecondary}{fg=black}
+
+\setbeamercolor{myblue}{fg=suaiBlue}
+\setbeamercolor{title page header}{fg=suaiBlue}
+\setbeamercolor{frametitle}{fg=suaiBlue, bg=suaiRed}
+\setbeamercolor{framesubtitle}{fg=suaiMedblue}
+\setbeamercolor{footline}{fg=suaiDarkblue}
+\setbeamercolor{section in toc}{fg=suaiBlue}
+
+\setbeamercolor{item}{parent=palettesecondary}
+\setbeamercolor{itemize item}{fg=suaiRed}
+
+\setbeamercolor{normal text}{fg=black}
+
+\setbeamercolor{structure}{fg=black}
+\setbeamercolor{alerted text}{fg=suaiRed}
+\setbeamercolor{section in head/foot}{fg=gray}
+\setbeamercolor{current section in head/foot}{fg=red}
+
+\setbeamercolor{block title}{fg=white, bg=suaiBlue}
+\setbeamercolor{block title alerted}{fg=white, bg=suaiRed}
+\setbeamercolor{block title example}{fg=suaiBlue}
+% \setbeamercolor{block body example}{bg=suaiDarkblue!3}
+
+\setbeamercolor{section in head/foot}{fg=suaiDarkblue}
+
+\pgfdeclarehorizontalshading{my shading}{100bp}{
+    color(0bp)=(suaiBlue); 
+    color(25bp)=(suaiBlue);
+    color(50bp)=(suaiLightblue); 
+    color(75bp)=(suaiRed);
+    color(100bp)=(suaiRed)
+}
